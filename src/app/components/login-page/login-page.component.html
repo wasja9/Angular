@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Person List</title>
+</head>
+<body>
+<h3>Регистрация</h3>
+
+
+<br>
+
+<form
+  class = "card"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  >
+<!--
+<#if error??>
+  <div class ="alert alert-danger" role="alert">логин или пароль введены неверно</div>
+</#if>
+
+<form method="post" action = "/login">
+-->
+
+  <br>
+
+  <label for="login">Логин</label>
+  <input formControlName="login" type="text" id="login" name="login" >
+
+  <span *ngIf="form.get(login).invalid && form.get('logi').touched"> Error </span>
+     <span *ngIf="form.get(login).errors['required']"> Login не должен быть пустым </span>
+     <span *ngIf="form.get(login).errors['login']"> Введите корректный логин </span>
+
+
+
+  <label for="password">Пароль</label>
+  <input formControlName="password"  type="password" id="password" name="password" >
+
+
+
+  <button [disabled]="form.invalid" type="submit"  >Войти</button>
+
+
+
+</form>
+
+</body>
+</html>
