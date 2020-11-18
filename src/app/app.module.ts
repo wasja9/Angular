@@ -18,7 +18,7 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 const  appRoutes: Routes=[
   {path: '', component:CarComponent},
   {path: 'about', component:KatComponent},
-  {path: 'login', component:LoginPageComponent},
+  {path: 'log', component:LoginPageComponent},
   {path: 'reg', component:RegisterPageComponent}
 
 ]

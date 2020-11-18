@@ -26,22 +26,24 @@
   <label for="login">Логин</label>
   <input formControlName="login" type="text" id="login" name="login" >
 
+  <!--
   <span *ngIf="form.get(login).invalid && form.get('logi').touched"> Error </span>
-     <span *ngIf="form.get(login).errors['required']"> Login не должен быть пустым </span>
-     <span *ngIf="form.get(login).errors['login']"> Введите корректный логин </span>
+      <span *ngIf="form.get(login).errors['required']"> Login не должен быть пустым </span>
+      <span *ngIf="form.get(login).errors['login']"> Введите корректный логин </span>
+
+      <button [disabled]="form.invalid" type="submit"  >Войти</button>
+ -->
+
+
+   <label for="password">Пароль</label>
+   <input formControlName="password"  type="password" id="password" name="password" >
+
+
+   <button type="submit"  >Войти</button>
 
 
 
-  <label for="password">Пароль</label>
-  <input formControlName="password"  type="password" id="password" name="password" >
+ </form>
 
-
-
-  <button [disabled]="form.invalid" type="submit"  >Войти</button>
-
-
-
-</form>
-
-</body>
-</html>
+ </body>
+ </html>
