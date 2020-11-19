@@ -12,6 +12,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { AuthLajoutComponent } from './components/shared/layouts/auth-lajout/auth-lajout.component';
 import { SiteLajoutComponent } from './components/shared/layouts/site-lajout/site-lajout.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { TestComponent } from './components/test/test.component';
 
 
 
@@ -19,7 +20,8 @@ const  appRoutes: Routes=[
   {path: '', component:CarComponent},
   {path: 'about', component:KatComponent},
   {path: 'log', component:LoginPageComponent},
-  {path: 'reg', component:RegisterPageComponent}
+  {path: 'reg', component:RegisterPageComponent},
+  {path: 'test', component:TestComponent}
 
 ]
 
@@ -32,7 +34,8 @@ const  appRoutes: Routes=[
     LoginPageComponent,
     AuthLajoutComponent,
     SiteLajoutComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

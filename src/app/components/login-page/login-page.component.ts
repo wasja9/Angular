@@ -4,6 +4,10 @@ import {AuthService} from "../shared/services/auth.services";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Router, Params} from "@angular/router";
 
+import {HttpClient} from "@angular/common/http";
+import {HttpClientModule} from  "@angular/common/http";
+import {FormsModule} from '@angular/forms';
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',

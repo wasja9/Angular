@@ -1,6 +1,8 @@
 
 import {Injectable} from '@angular/core'
 import {HttpClient} from "@angular/common/http";
+import {HttpClientModule} from  "@angular/common/http";
+import {FormsModule} from '@angular/forms';
 
 import {User} from "../interfaces";
 import {Observable} from "rxjs";
