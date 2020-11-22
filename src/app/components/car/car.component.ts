@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
+ tss:string='ggg';
+
   model:string;
   modS:{
     color:string,
@@ -28,6 +30,12 @@ this.modS={
       kusov:"red",
       spid:200
     }
+  }
+
+  mor(){
+    console.warn('Errors');
+    console.log('RRRRRRRRR');
+    this.tss=this.tss+'hhh'
   }
 
   addOpt(option){

@@ -5,17 +5,22 @@
 
 <ul>
   <li *ngFor = "let opt of mod">
-    {{opt}} <button class="btn btn-danger btn-sm"
+    {{opt}} <button
     (click)="delitOpt(opt)">x</button>
   </li>
 </ul>
 <br>
 
 <h1>{{modS.color}}</h1>
+
+<h1>{{tss}}</h1>
+
 <br>
 
 <h2>Выберите автомобиль</h2>
 <br>
+
+<button (click)="mor()">MOR</button>
 
 <button (click)="carSelect('bmw')">BMW</button>
 <button (click)="carSelect('audi')">Audi</button>

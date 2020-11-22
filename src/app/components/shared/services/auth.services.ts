@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {User} from "../interfaces";
 import {Observable} from "rxjs";
 import {tap} from 'rxjs/operators'
+import {map} from "rxjs/internal/operators";
 
 //@Injectable
 
@@ -24,10 +25,13 @@ export class AuthService{
   login(user:User): Observable<{token:string}>{
    return this.http.post<{token:string}>('/api/auth/login',user)
      .pipe(
+
        tap(
+      // map(
          ({token})=>{
-           localStorage.setItem('auth-token',token);
-           this.setToken(token)
+           localStorage.setItem('auth-token', token);
+           this.setToken(token);
+
          }
        )
      )
