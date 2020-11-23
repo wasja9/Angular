@@ -15,6 +15,25 @@ User name: <input type="text" [(ngModel)]="userName">
 
 -->
 
+<p>test works!</p>
+User name: <input type="text" [(ngModel)]="userName">
 
-<button (click)="search()">  search </button>
 
+<div *ngIf="response">
+  <p> {{test}} </p>
+  <p> {{response}} </p>
+  <img src="{{response.avatar_url"}} alt="">
+</div>
+
+
+
+
+
+<h1>{{tss}}</h1>
+
+<button (click)="mor()"> MOR </button>
+
+
+<button (click)="get_s()"> get_s </button>
+
+<button (click)="add()"> ADD </button>

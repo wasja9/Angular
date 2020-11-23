@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 import {tap} from 'rxjs/operators'
 import {map} from "rxjs/internal/operators";
 
-//@Injectable
+@Injectable()
 
 //providedIn: 'root';
 export class AuthService{
