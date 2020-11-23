@@ -4,6 +4,8 @@ import {HttpClientModule} from  "@angular/common/http";
 import {FormsModule} from '@angular/forms';
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
+import {Response} from "selenium-webdriver/http";
+//import {Http, Response} from '@angular/http'
 
 @Injectable()
 
@@ -22,19 +24,21 @@ export class TestComponent { //implements OnInit {
   info:string="?Text=blue"
   user:string;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,
+              httpclient :HttpClient
+  ) { }
 
   get_s(){
-    console.log("DATE_1: ");
+   // get_s():Observable<>{
+    console.log("GET1: ");
     //this.test=this.test+'fr'
-
-   // this.http.get('http://localhost:4200/test')
+    console.log("GET2: ");
+   //return this.http.get('http://localhost:4200/')
 
     this.http.get('http://localhost:8080/users')
    //return this.http.get<{token:string}>('http://localhost:8080/users/')
 
-
-        // value - результат
+    console.log("GET3: ");
 
     //this.http.get<{token:string}>('api.github.com/users')
     //api.github.com/users/seeschweiler
@@ -55,7 +59,8 @@ export class TestComponent { //implements OnInit {
 
 
   add(){
-    console.log("ADD: ");
+    //add():Observable<>{
+    console.log("ADD1: ");
     //this.test=this.test+'fr'
 
 
@@ -64,7 +69,11 @@ export class TestComponent { //implements OnInit {
     //postData(user: User){
     //user:string =
     this.user='{"firstName":"sss","lastName":"sss","login":"sss","password":"123"}';
-    return this.http.post<{token:string}>('http://localhost:8080/users/', this.user);
+    this.http.post<{token:string}>('http://localhost:8080/users/', this.user)
+
+    console.log("ADD2: ");
+     // .map((response: Response)=>response.json())
+    //return this.http.post<{token:string}>('http://example.com/api/users', this.user);
       //return this.http.post<{token:string}>('http://localhost:8080/users/', ./user.json)
 
 
