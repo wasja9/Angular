@@ -36,6 +36,9 @@ export class TestComponent { //implements OnInit {
    //return this.http.get('http://localhost:4200/')
 
     this.http.get('http://localhost:8080/users')
+      .subscribe(data=>{
+        console.log(data);
+      })
    //return this.http.get<{token:string}>('http://localhost:8080/users/')
 
     console.log("GET3: ");
@@ -69,7 +72,7 @@ export class TestComponent { //implements OnInit {
     //postData(user: User){
     //user:string =
     this.user='{"firstName":"sss","lastName":"sss","login":"sss","password":"123"}';
-    this.http.post<{token:string}>('http://localhost:8080/users/', this.user)
+    this.http.post('http://localhost:8080/users/', this.user);
 
     console.log("ADD2: ");
      // .map((response: Response)=>response.json())
