@@ -6,6 +6,8 @@ import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {Response} from "selenium-webdriver/http";
 import {Token} from "@angular/compiler";
+
+import {map} from "rxjs/internal/operators";
 //import {Http, Response} from '@angular/http'
 
 @Injectable()
@@ -26,21 +28,27 @@ export class TestComponent { //implements OnInit {
   info:string="?Text=blue"
   user:string;
 
+  responseStatus: number;
+
   constructor(private http:HttpClient,
               httpclient :HttpClient
   ) { }
 
-  get_s(){
+  get_s():Observable<String>{
    // get_s():Observable<>{
     console.log("GET1: ");
     console.log("GET2: ");
 
     //return this.http.get('http://localhost:8080/users/')
-    this.http.get('http://localhost:8080/users/')
-      .subscribe(data=>{
-        console.log("GET3: ");
-        console.log(data);
-      })
+    return this.http.get('http://localhost:8080/users/', {observe: 'response'})
+      .pipe(map(data => {
+        return data.http
+      }));
+  //.catch(this.ha);
+    // .subscribe(data=>{
+       // console.log("GET3: ");
+       // console.log(data);
+     // })
    //return this.http.get<{token:string}>('http://localhost:8080/users/')
 
     console.log("GET4: ");
@@ -74,7 +82,19 @@ export class TestComponent { //implements OnInit {
     //postData(user: User){
     //user:string =
     this.user='{"firstName":"sss","lastName":"sss","login":"sss","password":"123"}';
-    return this.http.post('http://localhost:8080/users/', this.user);
+    //this.http.post('http://localhost:8080/users',{})//, {"firstName":"sss","lastName":"sss","login":"sss","password":"123" })
+
+    this.http.post('http://localhost:8080/users', {"firstName":"sss","lastName":"sss","login":"sss","password":"123" })
+
+
+      .subscribe(result => {
+        alert(result);
+      }, error => {
+        alert(error); // [object Object]
+      });
+
+
+
 
     console.log("ADD2: ");
      // .map((response: Response)=>response.json())
