@@ -1,0 +1,36 @@
+<p>car works!</p>
+
+<h1>{{model}}</h1>
+<br>
+
+<ul>
+  <li *ngFor = "let opt of mod">
+    {{opt}} <button
+    (click)="delitOpt(opt)">x</button>
+  </li>
+</ul>
+<br>
+
+<h1>{{modS.color}}</h1>
+
+<h1>{{tss}}</h1>
+
+<br>
+
+<h2>Выберите автомобиль</h2>
+<br>
+
+<button (click)="mor()">MOR</button>
+
+<button (click)="carSelect('bmw')">BMW</button>
+<button (click)="carSelect('audi')">Audi</button>
+<button (click)="carSelect('mersedes')">Mersedes</button>
+
+<form (submit)="addOpt(option.value)">
+  <div>
+    <label>Добавление новой записи</label>
+    <input type="text" id="mod" placeholder="Введите что-то" #option>
+    <button type="submit">Добавить</button>
+  </div>
+</form>
+
