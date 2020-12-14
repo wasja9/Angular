@@ -1,49 +1,52 @@
-<html>
-<head>
-  <title>Person List</title>
-</head>
-<body>
-<h3>Регистрация</h3>
 
-
-<br>
-
-<form
-  class = "card"
-  [formGroup]="form"
-  (ngSubmit)="onSubmit()"
-  >
-<!--
-<#if error??>
-  <div class ="alert alert-danger" role="alert">логин или пароль введены неверно</div>
-</#if>
-
-<form method="post" action = "/login">
--->
-
-  <br>
-
-  <label for="login">Логин</label>
-  <input formControlName="login" type="text" id="login" name="login" >
+<div>
+  Username: <input type="text" [(ngModel)]="username">
+  Password: <input type="password" [(ngModel)]="password">
+  <button (click)="handleLogin()">Login</button>
+</div>
 
   <!--
-  <span *ngIf="form.get(login).invalid && form.get('logi').touched"> Error </span>
-      <span *ngIf="form.get(login).errors['required']"> Login не должен быть пустым </span>
-      <span *ngIf="form.get(login).errors['login']"> Введите корректный логин </span>
-
-      <button [disabled]="form.invalid" type="submit"  >Войти</button>
- -->
-
-
-   <label for="password">Пароль</label>
-   <input formControlName="password"  type="password" id="password" name="password" >
+ [(ngModel)]="username"
+  [(ngModel)]="password"
+<div>
+  Username: <input type="text" [(ngModel)]="username">
+  Password: <input type="password" [(ngModel)]="password">
+  <button (click)="handleLogin()">Login</button>
+</div>
 
 
-   <button type="submit" class="modal-action btn waves-effect">Войти</button>
+<html>
+<body>
+<form>
+
+<div ng-app="validationApp">
+  <form ng-controller="ValidationCtrl">
+    <input type="password" ng-model="password" required='' />
+    <input type="password" ng-model="repeat-password" required='' />
+    <input type="submit" />
+  </form>
+</div>
 
 
 
- </form>
+</form>
 
- </body>
- </html>
+</body>
+</html>
+
+      <input type="text" id="login" name="login" >
+    <input type="password" id="password" name="password" >
+
+
+    <button (click)="">Войти</button>
+
+
+
+-->
+
+
+
+
+
+
+

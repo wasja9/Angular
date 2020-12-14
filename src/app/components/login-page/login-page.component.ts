@@ -13,58 +13,24 @@ import {FormsModule} from '@angular/forms';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-export class LoginPageComponent implements OnInit, OnDestroy {
-form:FormGroup;
-aSub: Subscription;
 
-  constructor(private auth:AuthService,
-  private  router:Router,
-              private route: ActivatedRoute
-  ) { }
+export class LoginPageComponent {
+  username: string = "";
+  password: string = "";
+  isInvalid: boolean = false;
 
 
-  ngOnInit(): void {
-    this.form = new FormGroup( {
-      login: new FormControl(null, [Validators.required, Validators.email]),
-      password:new FormControl(null, [Validators.required, Validators.minLength(2)])
-    })
-    this.route.queryParams.subscribe((params: Params)=>{});
-  }
-  onSubmit(){
-    this.aSub=this.auth.login(this.form.value).subscribe(
-      ()=>this.router.navigate(['/overview']),
-      error=>{
-        console.warn(error)
-        this.form.enable()
+  constructor() { }
 
+  handleLogin() {
+    if (this.username == "Igor" && this.password == "123") {
+      console.log("OK");
+      this.isInvalid = false;
+    } else {
+      console.log("NO");
+      this.isInvalid = true;
     }
-
-
-    )
-    /* */
-   // const  user={
-   //   login: this.form.value.login,
-   //   password: this.form.value.password,
-   // }
-   // this.auth.login(user).subscribe(
-   //   ()=>console.log('Login success'),
-  //    error=>{
-  //      console.warn(error)
-  //    }
-  //  )
-
+  //  console.log(this.username)
   }
-
-ngOnDestroy(){
-    if (this.aSub){
-      this.aSub.unsubscribe();
-    }
-}
-
-//constructor(private auth: AuthService,
-//private  router: Router,
-//private  route: ActivatedRoute){
-
-//}
 
 }
