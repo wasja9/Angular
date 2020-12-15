@@ -9,7 +9,7 @@ import {Token} from "@angular/compiler";
 
 import {Users} from './users';
 @Injectable(
-//  {providedIn: 'root'}
+
   )
 @Component({
   selector: 'app-test',
@@ -29,7 +29,7 @@ export class TestComponent { //implements OnInit {
   users: Users[]=[];
 
   DT:any;
-  TokenService:string="3TQT2iy1Gl";
+  TokenService:string="jYfI16NSpM";
 
 
   constructor(private http:HttpClient ) { }
@@ -47,20 +47,14 @@ export class TestComponent { //implements OnInit {
   }
 
   add(){
-
     this.user='{"firstName":"sss","lastName":"sss","login":"sss","password":"123"}';
-
     this.http.post('http://localhost:8083/users/?token='+this.TokenService, {"firstName":"sss","lastName":"sss","login":"sss","password":"123" })
-
       .subscribe(result => {
         alert(result);
       }, error => {
         alert(error);
       });
-
-    // .map((response: Response)=>response.json())
   }
-
 
 }
 

@@ -13,6 +13,7 @@ import { AuthLajoutComponent } from './components/shared/layouts/auth-lajout/aut
 import { SiteLajoutComponent } from './components/shared/layouts/site-lajout/site-lajout.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { TestComponent } from './components/test/test.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 //import {freeApiService} from  './services/freeapi.service';
 
 
@@ -35,7 +36,8 @@ const  appRoutes: Routes=[
     AuthLajoutComponent,
     SiteLajoutComponent,
     RegisterPageComponent,
-    TestComponent
+    TestComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
