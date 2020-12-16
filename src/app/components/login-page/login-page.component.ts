@@ -17,7 +17,7 @@ import {Injectable} from "@angular/core";
 })
 
 export class LoginPageComponent {
-  TokenService:string="jYfI16NSpM";
+  TokenService:string="3TQT2iy1Gl";
   DT:any;
   id: string = "";
   login: string = "";

@@ -13,7 +13,9 @@ import { AuthLajoutComponent } from './components/shared/layouts/auth-lajout/aut
 import { SiteLajoutComponent } from './components/shared/layouts/site-lajout/site-lajout.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { TestComponent } from './components/test/test.component';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+
 //import {freeApiService} from  './services/freeapi.service';
 
 
@@ -22,7 +24,9 @@ const  appRoutes: Routes=[
   {path: 'about', component:KatComponent},
   {path: 'log', component:LoginPageComponent},
   {path: 'reg', component:RegisterPageComponent},
-  {path: 'test', component:TestComponent}
+  {path: 'test', component:TestComponent},
+  {path: 'sign', component:SignInComponent},
+  {path: 'sig', component:SignUpComponent}
 
 ]
 
@@ -37,7 +41,8 @@ const  appRoutes: Routes=[
     SiteLajoutComponent,
     RegisterPageComponent,
     TestComponent,
-    SignInComponent
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
