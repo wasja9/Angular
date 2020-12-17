@@ -17,7 +17,7 @@ import {Injectable} from "@angular/core";
 })
 
 export class LoginPageComponent {
-  TokenService:string="jYfI16NSpM";
+  TokenService:string="3TQT2iy1Gl";
   DT:any;
   id: string = "";
   login: string = "";
@@ -32,19 +32,29 @@ export class LoginPageComponent {
   constructor(private http:HttpClient) { }
   // console.log("ADD2: ");
 
-  select_Login() {
+  log_IN() {//Регистрация пользователя
 //Формируем Post запрос к серверу  на логин
-    this.http.post('http://localhost:8083/login/?token='+this.TokenService, {"login":this.Username,"password":this.Password})
+   // this.http.post('http://localhost:8083/login/?token='+this.TokenService, {"login":this.Username,"password":this.Password})
+    this.http.post('http://localhost:8083/login', {"login":this.Username,"password":this.Password})
+
       .subscribe(result => {
         //alert(result);//Окошко с подтверждением запроса на продолженеи действия
-        console.log(result);//
+        //console.log(result);//
         console.log("Auth-Token=" + result["value"]);//Вывод в консоль токена
-        document.cookie = "Auth-Token=" + result["value"];//Выводим ответ(после логина получаем от сервера token)в командную строку
+        //document.cookie = "Auth-Token=" + result["value"];//Создание куки с токеном
+        localStorage.setItem('Auth-Token',result["value"]);//Создане localStorage(сессии) с токеном
+        //console.log("11Auth-TokenlocalStorege=" +localStorage.getItem('Auth-Token'));//Вывод в консоль токена из сессии
+        //localStorage.removeItem('Auth-Token');//Удаление сессии
       }, error => {
         alert(error);
+        localStorage.removeItem('Auth-Token');//Удаление сессии
       });
      console.log("ADD1: ");
 
+  }
+
+  log_OUT() {//Выход из пользователя
+    localStorage.removeItem('Auth-Token');//Удаление сессии
   }
 
 }
