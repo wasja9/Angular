@@ -17,7 +17,7 @@ import {Injectable} from "@angular/core";
 })
 
 export class LoginPageComponent {
-  TokenService:string="3TQT2iy1Gl";
+  TokenService:string="jYfI16NSpM";
   DT:any;
   id: string = "";
   login: string = "";
@@ -32,26 +32,18 @@ export class LoginPageComponent {
   constructor(private http:HttpClient) { }
   // console.log("ADD2: ");
 
-  handleLogin() {
-
+  select_Login() {
+//Формируем Post запрос к серверу  на логин
     this.http.post('http://localhost:8083/login/?token='+this.TokenService, {"login":this.Username,"password":this.Password})
       .subscribe(result => {
-        alert(result);
+        //alert(result);//Окошко с подтверждением запроса на продолженеи действия
+        console.log(result);//
+        console.log("Auth-Token=" + result["value"]);//Вывод в консоль токена
+        document.cookie = "Auth-Token=" + result["value"];//Выводим ответ(после логина получаем от сервера token)в командную строку
       }, error => {
         alert(error);
       });
-
      console.log("ADD1: ");
-    //Sleep(20);
-    setTimeout(() => {  console.log("World!"); }, 20000);
-
-    this.http.get('http://localhost:8083/users/?token='+this.TokenService)
-      .subscribe(data=> {
-         console.log("ADD2: ");
-        console.log(data);
-        this.DT = data;
-
-      })
 
   }
 

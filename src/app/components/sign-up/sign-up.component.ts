@@ -10,7 +10,7 @@ import {Injectable} from "@angular/core";
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-  TokenService:string="3TQT2iy1Gl";
+  TokenService:string="jYfI16NSpM";
 
   login: string = "";
   password: string = "";
