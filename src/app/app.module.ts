@@ -28,7 +28,8 @@ const  appRoutes: Routes=[
   {path: 'reg', component:RegisterPageComponent},
   {path: 'test', component:TestComponent},
 
-  {path: 'sig', component:SignUpComponent}
+  {path: 'sig', component:SignUpComponent},
+  {path: 'prj', component:ViwRpojComponent}
 
 ]
 

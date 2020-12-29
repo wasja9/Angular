@@ -1,1 +1,31 @@
 <p>viw-rpoj works!</p>
+
+<button (click)="get_all()"> get_s </button>
+
+
+<a routerLink = "/log" routerLinkActive="active" >Logout</a>
+
+
+<ul>
+  <thead>
+  <th>Name</th>
+  <th>Index</th>
+  </thead>
+  <li *ngFor="let date of DT">
+
+
+    <p>{{date?.name}} | {{date?.part}}</p>
+
+
+  </li>
+</ul>
+
+
+<!--
+ <p>{{date?.name}} | {{date?.part}}</p>
+<a (click)="chek_prj()">Logout</a>
+    <a [routerLink]="['/log', 'fff']"> Link </a>
+<a  routerLink = "/log" routerLinkActive="active" >{{date?.name}}</a>
+ <a href="?ttt=10" routerLink = "/log,{{date?.name}}" routerLinkActive="active" >{{date?.name}}</a>
+   <a  [routerLink] = "['/log',12]" routerLinkActive="active" >{{date?.name}}</a>
+-->

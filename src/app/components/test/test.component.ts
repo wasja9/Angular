@@ -36,7 +36,7 @@ export class TestComponent { //implements OnInit {
  // console.log("ADD2: ");
 
   get_s() {
-
+    this.TokenService=localStorage.getItem('Auth-Token');
    // this.http.get('http://localhost:8083/users/')
     this.http.get('http://localhost:8083/users/?token='+this.TokenService)
 
