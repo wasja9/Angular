@@ -3,8 +3,6 @@
 <button (click)="get_all()"> get_s </button>
 
 
-<a routerLink = "/log" routerLinkActive="active" >Logout</a>
-
 
 <ul>
   <thead>
@@ -13,9 +11,23 @@
   </thead>
   <li *ngFor="let date of DT">
 
+    {{date.name}}
+    <a  routerLink = "/log" [queryParams]="{'product':'phone', 'price': {{date.name}}}">{{date.name}}</a>
 
-    <p>{{date?.name}} | {{date?.part}}</p>
+    <!--
+ <a  routerLink = "/brn" [queryParams]="{idd:'{{date.name}}'}">{{date.name}}</a>
+<a routerLink = "/log" routerLinkActive="active" >Logout</a>
 
+<a  routerLink= "/log" >Hello!!!</a>
+<a  routerLink = "/log" [queryParams]="{idd:222}">Hello!!!</a>
+
+
+     <a  routerLink = "/brn" [queryParams]="{idd:11}">{{date.name}}</a>
+        <a  routerLink = "/brn" [queryParams]="id:{{date.name}}">{{date.name}}</a>---------
+    <a  routerLink = "/log" [queryParams]="{idd:222}">Hello!!!</a>
+    <a  routerLink = "/log&fff=1" routerLinkActive="active" >{{date?.name}}</a>----
+     <a  routerLink = "/log" routerLinkActive="active" >{{date?.name}}</a>
+    -->
 
   </li>
 </ul>

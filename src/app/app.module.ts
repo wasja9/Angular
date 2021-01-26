@@ -16,20 +16,23 @@ import { TestComponent } from './components/test/test.component';
 
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ViwRpojComponent } from './components/viw-rpoj/viw-rpoj.component';
-import { TsBrenchAllComponent } from './components/ts-brench-all/ts-brench-all.component';
+
+import { BrenchOverComponent } from './components/brench-over/brench-over.component';
 
 //import {freeApiService} from  './services/freeapi.service';
 
 
 const  appRoutes: Routes=[
-  {path: '', component:CarComponent},
+  {path: 'car', component:CarComponent},
 
   {path: 'log', component:LoginPageComponent},
   {path: 'reg', component:RegisterPageComponent},
   {path: 'test', component:TestComponent},
 
   {path: 'sig', component:SignUpComponent},
-  {path: 'prj', component:ViwRpojComponent}
+  {path: 'prj', component:ViwRpojComponent},
+  {path: 'brn', component:BrenchOverComponent}
+
 
 ]
 
@@ -44,12 +47,10 @@ const  appRoutes: Routes=[
     SiteLajoutComponent,
     RegisterPageComponent,
     TestComponent,
-
     SignUpComponent,
-
     ViwRpojComponent,
 
-    TsBrenchAllComponent
+    BrenchOverComponent
   ],
   imports: [
     BrowserModule,
