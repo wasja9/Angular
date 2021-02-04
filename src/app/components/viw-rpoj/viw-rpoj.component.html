@@ -3,18 +3,26 @@
 <button (click)="get_all()"> get_s </button>
 
 
-
 <ul>
   <thead>
   <th>Name</th>
   <th>Index</th>
   </thead>
+
   <li *ngFor="let date of DT">
 
-    {{date.name}}
-    <a  routerLink = "/log" [queryParams]="{'product':'phone', 'price': {{date.name}}}">{{date.name}}</a>
+   <P>fain!!: {{date.name}}</P>
+
+
 
     <!--
+      <a  routerLink = "/log" [queryParams]={{date.name ?'ff':'sa'}}>{{date.name}}</a>
+
+
+     <a  routerLink = "/log" [queryParams]='sgg':{{date.name}}>{{date.name}}</a>
+    <a  routerLink = "/log" [queryParams]="{'product':'phone', 'price': '{date.name}'}">{{date.name}}</a>
+
+
  <a  routerLink = "/brn" [queryParams]="{idd:'{{date.name}}'}">{{date.name}}</a>
 <a routerLink = "/log" routerLinkActive="active" >Logout</a>
 
