@@ -1,51 +1,24 @@
-<p>viw-rpoj works!</p>
-
-<button (click)="get_all()"> get_s </button>
-
 
 <ul>
   <thead>
   <th>Name</th>
   <th>Index</th>
   </thead>
-
   <li *ngFor="let date of DT">
-
-   <P>fain!!: {{date.name}}</P>
-
-
-
-    <!--
-      <a  routerLink = "/log" [queryParams]={{date.name ?'ff':'sa'}}>{{date.name}}</a>
-
-
-     <a  routerLink = "/log" [queryParams]='sgg':{{date.name}}>{{date.name}}</a>
-    <a  routerLink = "/log" [queryParams]="{'product':'phone', 'price': '{date.name}'}">{{date.name}}</a>
-
-
- <a  routerLink = "/brn" [queryParams]="{idd:'{{date.name}}'}">{{date.name}}</a>
-<a routerLink = "/log" routerLinkActive="active" >Logout</a>
-
-<a  routerLink= "/log" >Hello!!!</a>
-<a  routerLink = "/log" [queryParams]="{idd:222}">Hello!!!</a>
-
-
-     <a  routerLink = "/brn" [queryParams]="{idd:11}">{{date.name}}</a>
-        <a  routerLink = "/brn" [queryParams]="id:{{date.name}}">{{date.name}}</a>---------
-    <a  routerLink = "/log" [queryParams]="{idd:222}">Hello!!!</a>
-    <a  routerLink = "/log&fff=1" routerLinkActive="active" >{{date?.name}}</a>----
-     <a  routerLink = "/log" routerLinkActive="active" >{{date?.name}}</a>
-    -->
-
+    <h5>
+      "PROJ: "
+      <a  routerLink = "/brn" [queryParams]="{projict:  date.name}">{{date.name}}</a>
+    </h5>
   </li>
 </ul>
 
 
 <!--
- <p>{{date?.name}} | {{date?.part}}</p>
-<a (click)="chek_prj()">Logout</a>
-    <a [routerLink]="['/log', 'fff']"> Link </a>
-<a  routerLink = "/log" routerLinkActive="active" >{{date?.name}}</a>
- <a href="?ttt=10" routerLink = "/log,{{date?.name}}" routerLinkActive="active" >{{date?.name}}</a>
-   <a  [routerLink] = "['/log',12]" routerLinkActive="active" >{{date?.name}}</a>
+<app-viw-rpoj></app-viw-rpoj>
+{{get_all()}}
+<button (click)="get_all()"> get_s </button>
+<app-viw-rpoj>  </app-viw-rpoj>
+<a  routerLink= "/log" >Hello!!!</a>
+<a  routerLink = "/log" [queryParams]="{idd:222}">Hello!!!</a>
 -->
+<!--  -->

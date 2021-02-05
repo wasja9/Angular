@@ -20,6 +20,9 @@ import {Users} from './users';
                    
 <button (click)="get_all()"> get_s </button>
 
+<input class="TestComponent" type="text" name="num1" [(ngModel)]="num1" />
+
+ <p>"NUM1: "{{num1}}</p> 
 
 <ul>
   <thead>
@@ -28,21 +31,15 @@ import {Users} from './users';
   </thead>
   <li *ngFor="let date of DT">
   
-
-  
- <a  [routerLink] = "['/log',{id1:date.name}]" >{{date.name}}</a>
- <a  routerLink = "/log" [queryParams]="{id2:date.name}">{{date.name}}</a>
+ <a  routerLink = "/log" [queryParams]="{projict:  date.name}">{{date.name}}</a>
 
 <!--
- <a  routerLink = '/log/:id' >{{date.name}}</a>
-<a> <div (click)=" get_all()" name = "name">{{date.name}}</div> </a>
+ <a  [routerLink] = "['/log',{id1:date.name}]" >{{date.name}}</a>
 <a  routerLink = "/log" >{{date.name}}</a>
- <a  routerLink = "/log" [queryParams]="{'product':'phone'}">{{date.name}}</a>
-<script src=get_all()></script>
-<app-test this.us_tm="NNNNNNNNNNNNNN"> </app-test>
--->
 
    <P>fain!!: {{date.name}}</P>
+-->
+
   </li>
 </ul>
 
@@ -61,6 +58,8 @@ export class TestComponent { //implements OnInit {
   user:string;
   responseStatus: number;
   users: Users[]=[];
+
+  num1: number;
 
   id:number=10;
   us_tm:string="ggg";
@@ -103,6 +102,8 @@ export class TestComponent { //implements OnInit {
         alert(error);
       });
   }
+
+
 
 }
 
