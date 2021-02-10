@@ -18,6 +18,7 @@ import { BrenchOverComponent } from './components/brench-over/brench-over.compon
 import { IraComponent } from './components/ira/ira.component';
 import { ConstructorComponent } from './components/constructor/constructor.component';
 import { TehProcessComponent } from './components/teh-process/teh-process.component';
+import { HeadComponent } from './components/head/head.component';
 
 
 const  appRoutes: Routes=[
@@ -29,7 +30,8 @@ const  appRoutes: Routes=[
   {path: 'prj', component:ViwRpojComponent},
   {path: 'brn', component:BrenchOverComponent},
   {path: 'ir', component:IraComponent},
-  {path: 'const', component:ConstructorComponent}
+  {path: 'const', component:ConstructorComponent},
+  {path: 'head', component:HeadComponent}
 
 ]
 
@@ -49,7 +51,8 @@ const  appRoutes: Routes=[
     BrenchOverComponent,
     IraComponent,
     ConstructorComponent,
-    TehProcessComponent
+    TehProcessComponent,
+    HeadComponent
   ],
 
   imports: [
