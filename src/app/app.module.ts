@@ -19,6 +19,8 @@ import { IraComponent } from './components/ira/ira.component';
 import { ConstructorComponent } from './components/constructor/constructor.component';
 import { TehProcessComponent } from './components/teh-process/teh-process.component';
 import { HeadComponent } from './components/head/head.component';
+import { PrjComponent } from './components/prj/prj.component';
+import { BrnTreeComponent } from './components/brn-tree/brn-tree.component';
 
 
 const  appRoutes: Routes=[
@@ -31,7 +33,9 @@ const  appRoutes: Routes=[
   {path: 'brn', component:BrenchOverComponent},
   {path: 'ir', component:IraComponent},
   {path: 'const', component:ConstructorComponent},
-  {path: 'head', component:HeadComponent}
+  {path: 'head', component:HeadComponent},
+  {path: 'pr', component:PrjComponent},
+  {path: 'br', component:BrnTreeComponent}
 
 ]
 
@@ -52,7 +56,9 @@ const  appRoutes: Routes=[
     IraComponent,
     ConstructorComponent,
     TehProcessComponent,
-    HeadComponent
+    HeadComponent,
+    PrjComponent,
+    BrnTreeComponent
   ],
 
   imports: [
