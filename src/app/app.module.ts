@@ -21,6 +21,7 @@ import { TehProcessComponent } from './components/teh-process/teh-process.compon
 import { HeadComponent } from './components/head/head.component';
 import { PrjComponent } from './components/prj/prj.component';
 import { BrnTreeComponent } from './components/brn-tree/brn-tree.component';
+import { AddPrjBrenComponent } from './components/add-prj-bren/add-prj-bren.component';
 
 
 const  appRoutes: Routes=[
@@ -35,7 +36,8 @@ const  appRoutes: Routes=[
   {path: 'const', component:ConstructorComponent},
   {path: 'head', component:HeadComponent},
   {path: 'pr', component:PrjComponent},
-  {path: 'br', component:BrnTreeComponent}
+  {path: 'br', component:BrnTreeComponent},
+  {path: 'add', component:AddPrjBrenComponent}
 
 ]
 
@@ -58,7 +60,8 @@ const  appRoutes: Routes=[
     TehProcessComponent,
     HeadComponent,
     PrjComponent,
-    BrnTreeComponent
+    BrnTreeComponent,
+    AddPrjBrenComponent
   ],
 
   imports: [
