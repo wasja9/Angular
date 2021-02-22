@@ -16,12 +16,14 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ViwRpojComponent } from './components/viw-rpoj/viw-rpoj.component';
 import { BrenchOverComponent } from './components/brench-over/brench-over.component';
 import { IraComponent } from './components/ira/ira.component';
-import { ConstructorComponent } from './components/constructor/constructor.component';
+import { ConstructorComponent } from './components/constructor_pr/constructor.component';
 import { TehProcessComponent } from './components/teh-process/teh-process.component';
 import { HeadComponent } from './components/head/head.component';
 import { PrjComponent } from './components/prj/prj.component';
 import { BrnTreeComponent } from './components/brn-tree/brn-tree.component';
-import { AddPrjBrenComponent } from './components/add-prj-bren/add-prj-bren.component';
+import { AddPrjBrenComponent } from './components/add-prj/add-prj-bren.component';
+import { ConstructorBrComponent } from './components/constructor-br/constructor-br.component';
+import { AddBrenComponent } from './components/add-bren/add-bren.component';
 
 
 const  appRoutes: Routes=[
@@ -33,11 +35,13 @@ const  appRoutes: Routes=[
   {path: 'prj', component:ViwRpojComponent},
   {path: 'brn', component:BrenchOverComponent},
   {path: 'ir', component:IraComponent},
-  {path: 'const', component:ConstructorComponent},
+  {path: 'const_p', component:ConstructorComponent},
   {path: 'head', component:HeadComponent},
   {path: 'pr', component:PrjComponent},
   {path: 'br', component:BrnTreeComponent},
-  {path: 'add', component:AddPrjBrenComponent}
+  {path: 'add_p', component:AddPrjBrenComponent},
+  {path: 'const_b', component:ConstructorBrComponent},
+  {path: 'add_b', component:AddBrenComponent}
 
 ]
 
@@ -61,7 +65,9 @@ const  appRoutes: Routes=[
     HeadComponent,
     PrjComponent,
     BrnTreeComponent,
-    AddPrjBrenComponent
+    AddPrjBrenComponent,
+    ConstructorBrComponent,
+    AddBrenComponent
   ],
 
   imports: [
