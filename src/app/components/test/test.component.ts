@@ -66,6 +66,7 @@ export class TestComponent { //implements OnInit {
   ddd:string;
   DT:any;
   TokenService:string="jYfI16NSpM";
+  myArray=[[]];
 
 
   constructor(private http:HttpClient) { }
