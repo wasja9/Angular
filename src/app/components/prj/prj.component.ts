@@ -27,12 +27,12 @@ export class PrjComponent{
         console.log(this.DT[0].name);
         console.log(this.DT.length);
 
-        for (var i = 0; i < Number(this.DT.length); ++i) {
-
-        }
+     //   for (var i = 0; i < Number(this.DT.length); ++i) {
+     //   }
 
       })
-    console.log(this.DT.length);
+    //console.log(this.DT.length);
+
     //number:i;
     //for (var i = 0; i < alert(this.DT.length); ++i) {
     //for (var i = 0; i < 10; ++i) {
