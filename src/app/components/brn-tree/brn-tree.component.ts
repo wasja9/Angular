@@ -11,17 +11,11 @@ import {isBoolean} from "util";
 })
 export class BrnTreeComponent  {
   DT:any;
+  DT_SORT:any;
   TokenService:string="NWn7lcGfSv";
   projict_temp:string="";
   myAr=[[]];
-
-//arr:Array();
-  //let arr1 = new Array();
-
-  // определение кортежа - кортеж состоит из двух элементов - строки и числа
-  //  ID ---------idRoot-------row
- // let userInfo: [number, number, number];
- // enum userInfo: [number, number, number];
+  myArT=[];
 
 
   constructor(private http:HttpClient, private activatedRoute:ActivatedRoute) {
@@ -37,76 +31,40 @@ export class BrnTreeComponent  {
         //console.log(data);
         this.DT=data;
 
-        console.log("Данные массива: ");
-        console.log(this.DT.length);
-        console.log(this.DT);
-
+////////////////////////////////////////////////////////////////////////////////////////////
         //Находим корневую запись и записываем в массив
         for (var i = 0; i < Number(this.DT.length); ++i) {
-          console.log("IN1: ");
-        //  console.log(this.DT[i].id);
-        //  console.log(this.DT[i].idNode);
           if (this.DT[i].id==this.DT[i].idNode){
-            this.myAr[0][0] = this.DT[i];
+            this.myArT[0]=this.DT[i];
+            this.myAr[0] = this.myArT;
           }
         }
-
-
-
-   /////////////////////////////////////////////////////
-
+      //сортировать по остальным полям
         let k:number=0;
-        let n:number=0;
         let m:number=0;
         let end_wh:boolean=true;
         let end_temp:boolean=true;
-//сортировать по остальным полям
         while (end_wh){
-          console.log(this.myAr[0].length);
-          console.log("CCC1");
-          m=0;
-          n=this.myAr[k].length;
-          for (var j = 0; j < n; ++j) {
-            console.log("IN2: ");
-            console.log("count: ");
-           // console.log(this.myAr[j][0].length);
-            console.log("CCC2");
-
+          end_wh=true;
+          end_temp=true;
+          for (var j = 0; j < this.myAr[k].length; ++j) {
+            m=0;
+            this.myArT=[];
               for (var i = 0; i < Number(this.DT.length); ++i) {
-                console.log("CCC3");
-                console.log(this.myAr[k][j].id);
-                console.log(this.DT[i].idRoot);
                 if (this.myAr[k][j].id==this.DT[i].idRoot){
-                  this.myAr[k+1][m] = this.DT[i];
+                  this.myArT[m]=this.DT[i];
+                  this.myAr[k+1] = this.myArT;
                   m++;
                   end_temp=false;
                 }
               }
           }
           if (! end_temp){end_wh=true;} else{end_wh=false}
-          console.log("end count: ");
-         // for (var i = 0; i < Number(this.DT.length); ++i) {}
+          console.log(this.myAr);
           k++;
         }
-
-       // console.log(this.myAr[0][0]);
-       // console.log(this.myAr[1][0]);
-        //console.log(this.myAr[2][0]);
-
-
-        //сортировать по остальным полям
-        //for (var i = 0; i < Number(this.DT.length); ++i) {}
-        //while (i < $("#pQuantity").val()) {          i += 1;        };
-
-
-        //сортировать пока не найдешь последнего
-
-       // for (var i = 0; i < Number(this.DT.length); ++i) {
-       //   for (var j = 0; j < Number(this.DT.length); ++j) {
-       //     this.myAr[0][i] = this.DT[i];
-       //     console.log(this.myAr[0][i]);
-       //   }
-        //}
+        this.DT_SORT=this.myAr;
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
       })
 
