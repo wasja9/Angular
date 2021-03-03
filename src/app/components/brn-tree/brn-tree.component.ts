@@ -19,7 +19,7 @@ export class BrnTreeComponent  {
 
 
   constructor(private http:HttpClient, private activatedRoute:ActivatedRoute) {
-    const arr = new Array([],[]);
+
     this.activatedRoute.queryParams.subscribe(params => {//Принимаем переменную из адресной строку
       this.projict_temp = params['projict'];
     });

@@ -1,1 +1,25 @@
-<p>teh-process works!</p>
+
+<ul>
+  <thead>
+  <h3>MY PROJICTS</h3>
+  </thead>
+  <li *ngFor="let date of DT">
+    <!-- <h5>
+       "PROJ: "
+       <a  routerLink = "/brn" [queryParams]="{projict:  date.name}">{{date.name}}</a>
+        Projict:  <a class="alert-link" routerLink = "/const_b" [queryParams]="{projict:  date.name}"><h5>{{date.name}}</h5></a>.
+
+     </h5>
+
+         <div class="alert alert-secondary" role="alert">
+      <p>{{date.messege}}</p>
+    </div>
+     -->
+    <div class="alert alert-secondary" role="alert">
+       <p>{{date.messege}}</p>
+    </div>
+
+
+
+  </li>
+</ul>
