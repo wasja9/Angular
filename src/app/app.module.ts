@@ -83,8 +83,12 @@ const  appRoutes: Routes=[
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+   // ,TehProcessComponent
   ],
   providers: [],//freeApiService],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+   ,TehProcessComponent
+  ]
 })
 export class AppModule { }

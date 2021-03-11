@@ -1,13 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
+import { CommonModule } from '@angular/common';
+
 import { ActivatedRoute } from '@angular/router';
-import {isBoolean} from "util";
+//import {isBoolean} from "util";
+import {Input} from '@angular/core';
+//import { BrowserModule } from '@angular/platform-browser';
+//import { FormsModule }   from '@angular/forms';
+
+//import {TehProcessComponent } from 'src/app/components/teh-process/teh-process.component';
+
+//@NgModule({
+  //imports:      [ TehProcessComponent]
+ // declarations: [ TehProcessComponent],
+
+ //  exports:    [ TehProcessComponent ],
+  //imports:      [CommonModule]//,
+  //declarations: [ TehProcessComponent ]
+
+//})
 
 @Component({
   selector: 'app-brn-tree',
   templateUrl: './brn-tree.component.html',
   styleUrls: ['./brn-tree.component.css']
+ // , template: `<app-constructor-for [userName]="name" [userAge]="age"></app-constructor-for>`
+  //, template: `<app-teh-process [userName]="name" [userAge]="age"></app-teh-process>`
+  //,
+ // declarations: [ TehProcessComponent ]
+
 })
 export class BrnTreeComponent  {
   DT:any;
@@ -17,8 +39,18 @@ export class BrnTreeComponent  {
   myAr=[[]];
   myArT=[];
 
+  //TEMPP={name:'Jon'};
+  name1:string="Tom";
+  age1:number = 24;
 
+ // public TehProcessComponent:TehProcessComponent;
+ // public BrnTreeComponent:BrnTreeComponent;
+
+ // constructor(private http:HttpClient, private activatedRoute:ActivatedRoute,private input:Input) {
+  //constructor(private http:HttpClient, private activatedRoute:ActivatedRoute, private tehProcessComponent:TehProcessComponent) {
   constructor(private http:HttpClient, private activatedRoute:ActivatedRoute) {
+
+    //console.log(this.tehProcessComponent.id_pr_t);
 
     this.activatedRoute.queryParams.subscribe(params => {//Принимаем переменную из адресной строку
       this.projict_temp = params['projict'];
@@ -28,9 +60,12 @@ export class BrnTreeComponent  {
     //this.http.get('http://localhost:8083/prN/Tochilo/?token='+this.TokenService)
     this.http.get('http://localhost:8083/prN/'+this.projict_temp+'/?token='+this.TokenService)
       .subscribe(data=>{
-        //console.log(data);
+        console.log("data: ");
         this.DT=data;
 
+       // console.log(this.input);
+       // console.log("id_pr_t равен: ");
+       // console.log(this.tehProcessComponent.id_pr_t);
 ////////////////////////////////////////////////////////////////////////////////////////////
         //Находим корневую запись и записываем в массив
         for (var i = 0; i < Number(this.DT.length); ++i) {
