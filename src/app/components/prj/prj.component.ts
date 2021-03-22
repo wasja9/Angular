@@ -17,7 +17,7 @@ export class PrjComponent{
     //myAr=[];
    // this.myArray[0][0]="1";
     this.TokenService=localStorage.getItem('Auth-Token');
-    this.http.get('http://localhost:8083/prI/0/?token='+this.TokenService)
+    this.http.get('http://localhost:8083/prND/0/?token='+this.TokenService)
       .subscribe(data=>{
         //console.log(data);
         this.DT=data;

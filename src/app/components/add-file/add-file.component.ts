@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+
 import {HttpClient} from "@angular/common/http";
 import {HttpClientModule} from  "@angular/common/http";
 import {Injectable} from "@angular/core";
 
 @Component({
-  selector: 'app-add-for',
-  templateUrl: './add-for.component.html',
-  styleUrls: ['./add-for.component.css']
+  selector: 'app-add-file',
+  templateUrl: './add-file.component.html',
+  styleUrls: ['./add-file.component.css']
 })
-export class AddForComponent {
+export class AddFileComponent {
   TokenService:string;//="3TQT2iy1Gl";
 
-  messege: string = "";
+  file: any;
+  path: string = "";
   idus: string = "";
-    idpr: string = "";
+  idpr: string = "";
   idbr: string = "";
 
   constructor(private http:HttpClient) { }
 
-  ADD_for() {
+
+
+  ADD_f() {
     if (localStorage.getItem('Auth-Token') !== null) {
       this.TokenService=localStorage.getItem('Auth-Token');//Инициализация токена из сессии
     }
@@ -26,7 +30,13 @@ export class AddForComponent {
 
     //console.log(this.login+":"+this.password+":"+this.firstName+":"+this.lastName);
 
-    this.http.post('http://localhost:8083/ms/?token='+this.TokenService, {"messege":this.messege,"idus":this.idus,"idpr":this.idpr,"idbr":this.idbr})
+    this.idus = "";
+    this.idpr = localStorage.getItem('id_pr_s');
+    this.idbr = localStorage.getItem('id_br_s');
+    // console.log(localStorage.getItem('id_pr_s'));//Извлекаем из сессии id проекта
+    // console.log(localStorage.getItem('id_br_s'));//Извлекаем из сессии id проекта
+
+    this.http.post('http://localhost:8083/fl/?token='+this.TokenService, {"file":this.file,"path":this.path,"idus":this.idus,"idpr":this.idpr,"idbr":this.idbr})
     //this.http.post('http://localhost:8083/pr/?token='+this.TokenService, {"name":this.name,"str":0,"node":0,"row":0,"idRoot":0})
 
       .subscribe(result => {
@@ -38,5 +48,6 @@ export class AddForComponent {
 
 
   }
+
 
 }

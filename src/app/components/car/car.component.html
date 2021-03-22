@@ -23,9 +23,11 @@
 
 <button (click)="mor()">MOR</button>
 
-<button (click)="carSelect('bmw')">BMW</button>
-<button (click)="carSelect('audi')">Audi</button>
-<button (click)="carSelect('mersedes')">Mersedes</button>
+<div >
+    <button (click)="carSelect('bmw')">BMW</button>
+    <button (click)="carSelect('audi')">Audi</button>
+    <button (click)="carSelect('mersedes')">Mersedes</button>
+</div >
 
 <form (submit)="addOpt(option.value)">
   <div>
@@ -35,3 +37,23 @@
   </div>
 </form>
 
+
+<div ng-if="dtt()==1">
+
+  <p>FFFFFFFFFFFF</p>
+
+</div>
+
+
+
+<!--
+<div ng-if="{{MD}} == 1">
+
+  <button (click)="carSelect('bmw')">BMW</button>
+  <button (click)="carSelect('audi')">Audi</button>
+  <button (click)="carSelect('mersedes')">Mersedes</button>
+
+</div>
+
+
+-->

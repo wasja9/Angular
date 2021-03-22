@@ -43,6 +43,9 @@ export class LoginPageComponent {
         console.log("Auth-Token=" + result["value"]);//Вывод в консоль токена
         //document.cookie = "Auth-Token=" + result["value"];//Создание куки с токеном
         localStorage.setItem('Auth-Token',result["value"]);//Создане localStorage(сессии) с токеном
+        localStorage.setItem('id_pr_s',"");//Создане localStorage(сессии) с токеном
+        localStorage.setItem('id_br_s',"");//Создане localStorage(сессии) с токеном
+
         //console.log("11Auth-TokenlocalStorege=" +localStorage.getItem('Auth-Token'));//Вывод в консоль токена из сессии
         //localStorage.removeItem('Auth-Token');//Удаление сессии
       }, error => {

@@ -6,8 +6,28 @@
 
   <div class="container">
     <div class="row">
+
       <div class="col-md-2">
-        <app-add-for></app-add-for>
+
+        <button  (click)="setCondition(0)">Сообщение</button>
+        <button  (click)="setCondition(1)">Фаил</button>
+        <button  (click)="setCondition(2)">Видео</button>
+        <!--
+        <button type="number" [condition]=0>Сообщение</button>
+        <button type="number" [condition]=2>Фаил</button>
+        <button type="number" [condition]=2>Видео</button>
+        setCondition
+        -->
+
+          <p *ngIf="condition==0">
+            <app-add-mess></app-add-mess>
+          </p>
+          <p *ngIf="condition==1">
+            <app-add-file></app-add-file>
+          </p>
+          <p *ngIf="condition==2">
+            <app-add-vid></app-add-vid>
+          </p>
       </div>
       <div class="col-md-10">
         <app-teh-process></app-teh-process>

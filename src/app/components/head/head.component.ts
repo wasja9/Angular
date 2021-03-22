@@ -9,4 +9,7 @@ export class HeadComponent {
 
   constructor() { }
 
+  exampleModal(){
+    //<app-login-page></app-login-page>
+  }
 }

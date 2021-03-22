@@ -24,7 +24,12 @@ import { AddPrjBrenComponent } from './components/add-prj/add-prj-bren.component
 import { ConstructorBrComponent } from './components/constructor-br/constructor-br.component';
 import { AddBrenComponent } from './components/add-bren/add-bren.component';
 import { ConstructorForComponent } from './components/constructor-for/constructor-for.component';
-import { AddForComponent } from './components/add-for/add-for.component';
+//import { AddForComponent } from './components/add-mess/add-for.component';
+import { Test1Component } from './components/test1/test1.component';
+import { Test2Component } from './components/test2/test2.component';
+import { AddMessComponent } from './components/add-mess/add-mess.component';
+import { AddFileComponent } from './components/add-file/add-file.component';
+import { AddVidComponent } from './components/add-vid/add-vid.component';
 
 
 const  appRoutes: Routes=[
@@ -47,7 +52,15 @@ const  appRoutes: Routes=[
   {path: 'add_b', component:AddBrenComponent},
 
   {path: 'const_f', component:ConstructorForComponent},
-  {path: 'add_f', component:AddForComponent}
+
+  //{path: 'add_f', component:AddForComponent},
+  {path: 'test1', component:Test1Component},
+  {path: 'test2', component:Test2Component},
+
+  {path: 'add_mes', component:AddMessComponent},
+  {path: 'add_fil', component:AddFileComponent},
+  {path: 'add_vid', component:AddVidComponent}
+
 ]
 
 
@@ -73,7 +86,12 @@ const  appRoutes: Routes=[
     ConstructorBrComponent,
     AddBrenComponent,
     ConstructorForComponent,
-    AddForComponent
+    //AddForComponent,
+    Test1Component,
+    Test2Component,
+    AddMessComponent,
+    AddFileComponent,
+    AddVidComponent
   ],
 
   imports: [
@@ -83,12 +101,8 @@ const  appRoutes: Routes=[
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-   // ,TehProcessComponent
   ],
   providers: [],//freeApiService],
-  bootstrap: [
-    AppComponent
-   ,TehProcessComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

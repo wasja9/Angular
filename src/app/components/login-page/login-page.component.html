@@ -1,12 +1,25 @@
 
-<div>
-  Username: <input type="text" [(ngModel)]="Username"><!-- поле ввода логина  -->
-  Password: <input type="password" [(ngModel)]="Password"><!-- поле ввода пароля  -->
-  <button (click)="log_IN()">Login</button>
-  <button (click)="log_OUT()">Logout</button>
+<div  role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+
+
+<div class="modal-dialog" role="document">
+
+      <div>
+        Username: <input type="text" [(ngModel)]="Username"><!-- поле ввода логина  -->
+        Password: <input type="password" [(ngModel)]="Password"><!-- поле ввода пароля  -->
+        <button (click)="log_IN()">Login</button>
+        <button (click)="log_OUT()">Logout</button>
+      </div>
+
+
+</div>
+</div>
+<!-- <div class="modal fade" id = "exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      </div>
 </div>
 
-  <!--   -->
+    -->
 
 
 

@@ -5,11 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './constructor-for.component.html',
   styleUrls: ['./constructor-for.component.css']
 })
-export class ConstructorForComponent implements OnInit {
-
+export class ConstructorForComponent {
+ // condition: boolean=true;
+  condition: number=2;
   constructor() { }
 
-  ngOnInit(): void {
-  }
+setCondition(VAL:number){
+    this.condition=VAL;
+}
 
 }

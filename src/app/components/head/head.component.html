@@ -11,8 +11,18 @@
             <a class="nav-link" href="#">Projict</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Brench</a>
+            <a class="nav-link" href="#" data-target="#example" data-toggle="toast">Brench</a>
           </li>
+
+      <!--    <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Войти</a>
+          </li>
+-->
+            <li class="nav-item">
+              <a class="nav-link" href="log" >Войти</a>
+            </li>
+            log
+
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Part projict</a>
           </li>
@@ -25,3 +35,26 @@
     </div>
   </nav>
 
+
+
+  <div class="modal fade" id = "exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <h5>Modal TITLE</h5>
+      <button type="button" class="btn-close" type="button" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&time</span>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="toast" id = "example" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+
+      <div class="mt-2 pt-2 border-top">
+
+        <button type="button" class="btn btn-primary btn-sm">Take action</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
+      </div>
+    </div>
+  </div>

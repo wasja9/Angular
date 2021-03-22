@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent implements OnInit {
  tss:string='ggg';
-
+  MD:number=0;
   model:string;
   modS:{
     color:string,
@@ -87,5 +87,7 @@ this.modS={
     }
 
   }
+
+  dtt(){return 3};
 
 }

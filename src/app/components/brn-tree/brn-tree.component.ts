@@ -1,79 +1,60 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
-import { CommonModule } from '@angular/common';
-
 import { ActivatedRoute } from '@angular/router';
-//import {isBoolean} from "util";
-import {Input} from '@angular/core';
-//import { BrowserModule } from '@angular/platform-browser';
-//import { FormsModule }   from '@angular/forms';
-
-//import {TehProcessComponent } from 'src/app/components/teh-process/teh-process.component';
-
-//@NgModule({
-  //imports:      [ TehProcessComponent]
- // declarations: [ TehProcessComponent],
-
- //  exports:    [ TehProcessComponent ],
-  //imports:      [CommonModule]//,
-  //declarations: [ TehProcessComponent ]
-
-//})
-
+import {isBoolean} from "util";
+import { DateSharService } from 'src/app/date-shar.service';
+//import { BrnTreeComponent } from 'app/components/brn-tree/brn-tree.component';
 @Component({
   selector: 'app-brn-tree',
   templateUrl: './brn-tree.component.html',
-  styleUrls: ['./brn-tree.component.css']
- // , template: `<app-constructor-for [userName]="name" [userAge]="age"></app-constructor-for>`
-  //, template: `<app-teh-process [userName]="name" [userAge]="age"></app-teh-process>`
-  //,
- // declarations: [ TehProcessComponent ]
-
+  styleUrls: ['./brn-tree.component.css']//,
+  ,providers:[DateSharService]
 })
 export class BrnTreeComponent  {
+ // public BrnTreeComponent:BrnTreeComponent; //?????????????????????????
   DT:any;
   DT_SORT:any;
+  id_pr:string="";
   TokenService:string="NWn7lcGfSv";
   public projict_temp:string="";
   myAr=[[]];
   myArT=[];
 
-  //TEMPP={name:'Jon'};
-  name1:string="Tom";
-  age1:number = 24;
+ // id_pr_t_1={name:'Jon'};
+  //id_pr_t_1:string;
 
- // public TehProcessComponent:TehProcessComponent;
- // public BrnTreeComponent:BrnTreeComponent;
 
- // constructor(private http:HttpClient, private activatedRoute:ActivatedRoute,private input:Input) {
-  //constructor(private http:HttpClient, private activatedRoute:ActivatedRoute, private tehProcessComponent:TehProcessComponent) {
+ // constructor(private http:HttpClient, private activatedRoute:ActivatedRoute,private dateSharService:DateSharService) {
   constructor(private http:HttpClient, private activatedRoute:ActivatedRoute) {
-
-    //console.log(this.tehProcessComponent.id_pr_t);
+    this.TokenService=localStorage.getItem('Auth-Token');//Извлекаем из сессии токен
 
     this.activatedRoute.queryParams.subscribe(params => {//Принимаем переменную из адресной строку
-      this.projict_temp = params['projict'];
+      this.projict_temp = params['pr_name'];
+      this.id_pr = params['id_pr'];
     });
-
+    localStorage.setItem('id_pr_s',this.id_pr);//Заносим в сессию id выбранного проекта
     this.TokenService=localStorage.getItem('Auth-Token');
+
+    //this.myAr=[];//Обнуление массива
+
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    //Kорневую запись записываем в массив
+    this.myArT=[];//Обнуление массива
     //this.http.get('http://localhost:8083/prN/Tochilo/?token='+this.TokenService)
-    this.http.get('http://localhost:8083/prN/'+this.projict_temp+'/?token='+this.TokenService)
+    this.http.get('http://localhost:8083/prI/'+this.id_pr+'/?token='+this.TokenService)
       .subscribe(data=>{
-        console.log("data: ");
+        this.DT=data;
+           this.myArT[0]=this.DT[0];//Добавляем его в одномерный массив
+           this.myAr[0] = this.myArT;//Добавляем одномерный массив в многомерный
+    })
+
+    this.http.get('http://localhost:8083/prND/'+this.id_pr+'/?token='+this.TokenService)
+      .subscribe(data=>{
+        console.log(data);
         this.DT=data;
 
-       // console.log(this.input);
-       // console.log("id_pr_t равен: ");
-       // console.log(this.tehProcessComponent.id_pr_t);
-////////////////////////////////////////////////////////////////////////////////////////////
-        //Находим корневую запись и записываем в массив
-        for (var i = 0; i < Number(this.DT.length); ++i) {
-          if (this.DT[i].id==this.DT[i].idNode){//Ищем корень дерева проекта
-            this.myArT[0]=this.DT[i];//Добавляем его в одномерный массив
-            this.myAr[0] = this.myArT;//Добавляем одномерный массив в многомерный
-          }
-        }
+      //  localStorage.setItem('id_pr_s',this.myAr[0][0].id);//Заносим в сессию id выбранного проекта
       //сортировать по остальным полям
         let k:number=0;
         let m:number=0;
@@ -95,12 +76,14 @@ export class BrnTreeComponent  {
           console.log(this.myAr);
           k++;
         }
+       // localStorage.setItem('id_pr_s',this.myAr[0][0].id);//Заносим в сессию id выбранного проекта
         this.DT_SORT=this.myAr;
+        //console.log("ID_PR");
+        //console.log(localStorage.getItem('id_pr_s'));//Извлекаем из сессии id проекта
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
       })
-
-
 
   }
 

@@ -15,7 +15,7 @@ export class BrenchOverComponent {
 
   //Коструктрор переопределяет данные, запрашивает данные однократнос с сервера и помещает их в массив date
   constructor(private http:HttpClient, private activatedRoute:ActivatedRoute) {
-    this.TokenService=localStorage.getItem('Auth-Token');
+    this.TokenService=localStorage.getItem('Auth-Token');//Извлекаем из сессии токен
     this.http.get('http://localhost:8083/brn/?token='+this.TokenService)
       .subscribe(data=>{
         //console.log(data);
